@@ -94,7 +94,7 @@ namespace AppDomainToolkit
 
             // Add some root directories to resolve some required assemblies
             // Create the new domain and wrap it for disposal.
-            this.wrappedDomain = new DisposableAppDomain(createDomain(setupInfo, UniqueId.ToString()));
+            this.wrappedDomain = new DisposableAppDomain(createDomain(setupInfo, setupInfo.ApplicationName));
 
             AppDomain.CurrentDomain.AssemblyResolve += this.AssemblyImporter.Resolve;
 
